@@ -1,0 +1,32 @@
+<div class="container">
+  <h2>Personas</h2>
+
+  <!-- Formulario para agregar persona -->
+  <form (ngSubmit)="agregarPersona()" class="form">
+    <input type="text" [(ngModel)]="nuevaPersona.nombre" name="nombre" placeholder="Nombre" required />
+    <input type="text" [(ngModel)]="nuevaPersona.apellido" name="apellido" placeholder="Apellido" required />
+    <button type="submit">Agregar</button>
+  </form>
+
+  <!-- Tabla de personas -->
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let persona of personas">
+        <td>{{ persona.id }}</td>
+        <td>{{ persona.nombre }}</td>
+        <td>{{ persona.apellido }}</td>
+        <td>
+          <button (click)="eliminarPersona(persona.id)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
