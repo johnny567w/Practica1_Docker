@@ -5,4 +5,5 @@ git clone https://github.com/johnny567w/Practica1_Docker.git
 Despues se debe acceder a la carpeta del proyecto mediante una CMD, haciendo uso de:
 cd Practica1_Docker
 En la misma carpeta, hacemos uso de:
-docker compose up, desplegandose asi la aplicacion funcional 
+mvn clean package
+docker compose up --build, desplegandose asi la aplicacion funcional 
